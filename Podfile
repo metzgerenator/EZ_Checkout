@@ -10,4 +10,7 @@ target 'barCodeSample' do
 pod 'BarcodeScanner'
 pod 'IQKeyboardManagerSwift'
 
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+
 end

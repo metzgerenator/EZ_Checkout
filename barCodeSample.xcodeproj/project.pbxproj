@@ -13,6 +13,9 @@
 		57B68D1E1E634C73009587FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B68D1C1E634C73009587FA /* Main.storyboard */; };
 		57B68D201E634C73009587FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B68D1F1E634C73009587FA /* Assets.xcassets */; };
 		57B68D231E634C73009587FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B68D211E634C73009587FA /* LaunchScreen.storyboard */; };
+		57B68D2B1E637AA2009587FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57B68D2A1E637AA2009587FA /* GoogleService-Info.plist */; };
+		57B68D2E1E637B8C009587FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B68D2D1E637B8C009587FA /* LoginViewController.swift */; };
+		57B68D301E638218009587FA /* CreateNewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B68D2F1E638218009587FA /* CreateNewUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		57B68D1F1E634C73009587FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B68D221E634C73009587FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B68D241E634C73009587FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57B68D2A1E637AA2009587FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57B68D2D1E637B8C009587FA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		57B68D2F1E638218009587FA /* CreateNewUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewUser.swift; sourceTree = "<group>"; };
 		DD8151C230B5B3F18FA02AE9 /* Pods-barCodeSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barCodeSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-barCodeSample/Pods-barCodeSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,14 +67,25 @@
 		57B68D171E634C73009587FA /* barCodeSample */ = {
 			isa = PBXGroup;
 			children = (
+				57B68D2C1E637B6C009587FA /* Authentication */,
 				57B68D181E634C73009587FA /* AppDelegate.swift */,
 				57B68D1A1E634C73009587FA /* ViewController.swift */,
 				57B68D1C1E634C73009587FA /* Main.storyboard */,
 				57B68D1F1E634C73009587FA /* Assets.xcassets */,
 				57B68D211E634C73009587FA /* LaunchScreen.storyboard */,
 				57B68D241E634C73009587FA /* Info.plist */,
+				57B68D2A1E637AA2009587FA /* GoogleService-Info.plist */,
 			);
 			path = barCodeSample;
+			sourceTree = "<group>";
+		};
+		57B68D2C1E637B6C009587FA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				57B68D2D1E637B8C009587FA /* LoginViewController.swift */,
+				57B68D2F1E638218009587FA /* CreateNewUser.swift */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		655D00DE0661E569CAD28343 /* Pods */ = {
@@ -152,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B68D231E634C73009587FA /* LaunchScreen.storyboard in Resources */,
+				57B68D2B1E637AA2009587FA /* GoogleService-Info.plist in Resources */,
 				57B68D201E634C73009587FA /* Assets.xcassets in Resources */,
 				57B68D1E1E634C73009587FA /* Main.storyboard in Resources */,
 			);
@@ -212,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B68D2E1E637B8C009587FA /* LoginViewController.swift in Sources */,
 				57B68D1B1E634C73009587FA /* ViewController.swift in Sources */,
 				57B68D191E634C73009587FA /* AppDelegate.swift in Sources */,
+				57B68D301E638218009587FA /* CreateNewUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
