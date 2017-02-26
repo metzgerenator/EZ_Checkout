@@ -8,5 +8,6 @@ target 'barCodeSample' do
   # Pods for barCodeSample
 
 pod 'BarcodeScanner'
+pod 'IQKeyboardManagerSwift'
 
 end

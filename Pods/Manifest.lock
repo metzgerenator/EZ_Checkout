@@ -1,12 +1,15 @@
 PODS:
   - BarcodeScanner (2.0.0)
+  - IQKeyboardManagerSwift (4.0.7)
 
 DEPENDENCIES:
   - BarcodeScanner
+  - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   BarcodeScanner: 266ab4b479d407b74bc4b473fa5020b4523ad9e3
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
 
-PODFILE CHECKSUM: 16b5a05759eb5c52741080b20aaa1d9c6d0ef98c
+PODFILE CHECKSUM: 6796f6d49f1461aeafbf43af996e87745f2b0d5d
 
 COCOAPODS: 1.1.1
