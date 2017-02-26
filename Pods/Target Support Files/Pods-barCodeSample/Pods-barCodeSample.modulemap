@@ -1,0 +1,6 @@
+framework module Pods_barCodeSample {
+  umbrella header "Pods-barCodeSample-umbrella.h"
+
+  export *
+  module * { export * }
+}
