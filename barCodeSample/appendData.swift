@@ -27,6 +27,7 @@ func appendValues(values: Dictionary<String, AnyObject>) {
     if let user = FIRAuth.auth()?.currentUser {
         
         let ref = FIRDatabase.database().reference().child("users").child(user.uid)
+        print("ref \(ref), values \(values)")
         ref.updateChildValues(values)
         
         

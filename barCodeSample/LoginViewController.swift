@@ -18,20 +18,27 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         
+      
         
         if let email = emailField.text, let password = passwordField.text {
-            FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+            
+            if email.characters.count > 0 && password.characters.count > 0{
                 
-                if error == nil {
+                FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
                     
-                    print("success login")
+                    if error == nil {
+                        
+                        self.performSegue(withIdentifier: "scanner", sender: self)
+                        
+                    }
+                    
                 }
-
+                
+            } else {
+                 displayAlert(title: "fill in fields", message: "Please fill in all fields")
             }
             
-        } else {
-            
-            displayAlert(title: "fill in fields", message: "Please fill in all fields")
+           
             
         }
         
@@ -48,14 +55,20 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        //log out user
+//                let firebaseAuth = FIRAuth.auth()
+//                do {
+//                    try firebaseAuth?.signOut()
+//                } catch let signOutError as NSError {
+//                    print ("Error signing out: %@", signOutError)
+//                }
+//
         
         //create listener
         if FIRAuth.auth()?.currentUser != nil {
             // User is signed in.
             // ...
-            
+            self.performSegue(withIdentifier: "scanner", sender: self)
             
         } else {
             // No user is signed in.

@@ -31,34 +31,35 @@ class CreateNewUser: UIViewController {
         
         if let userName = userNameField.text, let email = emailField.text, let password = passwordField.text, let firstname = firstNameField.text, let lastName = lastNameField.text {
             
-            FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
+            if userName.characters.count > 0 && email.characters.count > 0 && password.characters.count > 0 && firstname.characters.count > 0 && lastName.characters.count > 0 {
                 
-                if error == nil {
+                FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
                     
-                    //append user
-                    
-                    
-                    let userData: Dictionary<String, String> = [UserFields.email.rawValue : email, UserFields.firstName.rawValue : firstname, UserFields.lastName.rawValue : lastName, UserFields.userName.rawValue : userName]
-                    
-                    appendValues(values: userData as Dictionary<String, AnyObject> )
-                    
-                    // perform segue 
-                    self.performSegue(withIdentifier: "scan", sender: self)
-                    
-                }else {
-                    
-                    self.displayAlert(title: "servor error", message: (error?.localizedDescription)!)
+                    if error == nil {
+                        
+                        //append user
+                        
+                        
+                        let userData: Dictionary<String, String> = [UserFields.email.rawValue : email, UserFields.firstName.rawValue : firstname, UserFields.lastName.rawValue : lastName, UserFields.userName.rawValue : userName]
+                        
+                        appendValues(values: userData as Dictionary<String, AnyObject> )
+                        
+                        self.performSegue(withIdentifier: "scan", sender: self)
+                        
+                    }else {
+                        
+                        self.displayAlert(title: "servor error", message: (error?.localizedDescription)!)
+                        
+                    }
                     
                 }
                 
+            } else {
+                self.displayAlert(title: "Fill in Fields", message: "please fill in all fields")
             }
             
             
-        } else {
-            
-            self.displayAlert(title: "Fill in Fields", message: "please fill in all fields")
         }
-        
        
         
         

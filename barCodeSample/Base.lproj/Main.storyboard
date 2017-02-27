@@ -113,6 +113,7 @@
                     <connections>
                         <outlet property="emailField" destination="DQe-rz-tQj" id="T4Q-dj-6eY"/>
                         <outlet property="passwordField" destination="zmr-TH-qam" id="Cvc-B6-RsD"/>
+                        <segue destination="TGK-v5-5bT" kind="presentation" identifier="scanner" id="OeH-vh-rBA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzJ-Wg-Bhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -206,7 +207,7 @@
                         <outlet property="lastNameField" destination="veT-OF-f6P" id="id1-PV-OoX"/>
                         <outlet property="passwordField" destination="tla-Bl-wo3" id="adq-iX-6Wq"/>
                         <outlet property="userNameField" destination="d0P-q2-f0Y" id="M97-6H-NE6"/>
-                        <segue destination="TGK-v5-5bT" kind="presentation" identifier="&quot;scan&quot;" id="b4C-Ba-unc"/>
+                        <segue destination="TGK-v5-5bT" kind="presentation" identifier="scan" id="b4C-Ba-unc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ewx-cC-UnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,6 +238,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="TGK-v5-5bT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="REM-H9-s1A">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -249,4 +251,7 @@
             <point key="canvasLocation" x="1261.5999999999999" y="1670.9145427286358"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OeH-vh-rBA"/>
+    </inferredMetricsTieBreakers>
 </document>
