@@ -367,6 +367,7 @@
 			baseConfigurationReference = DD8151C230B5B3F18FA02AE9 /* Pods-barCodeSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = K56TMNQLJF;
 				INFOPLIST_FILE = barCodeSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -381,6 +382,7 @@
 			baseConfigurationReference = 3FB04DD53C30409C23C45320 /* Pods-barCodeSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = K56TMNQLJF;
 				INFOPLIST_FILE = barCodeSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
