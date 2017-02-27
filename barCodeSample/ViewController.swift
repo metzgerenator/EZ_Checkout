@@ -43,10 +43,19 @@ class ViewController: UIViewController, BarcodeScannerCodeDelegate, BarcodeScann
     func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
         print(code)
         
-        upcCodes.append(code)
-        self.tableView.reloadData()
-        controller.dismiss(animated: true, completion: nil)
-        controller.reset()
+        
+        //controller.reset()
+        
+        let delayTime = DispatchTime.now() + Double(Int64(6 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            
+            self.upcCodes.append(code)
+            self.tableView.reloadData()
+            controller.dismiss(animated: true, completion: nil)
+            controller.resetWithError()
+        }
+
+        
     }
     
     func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
