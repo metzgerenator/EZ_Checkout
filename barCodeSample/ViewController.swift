@@ -11,6 +11,11 @@ import BarcodeScanner
 
 class ViewController: UIViewController, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var upcCodes = [String]()
+    
+    
     @IBAction func scan(_ sender: Any) {
         
         let controller = BarcodeScannerController()
@@ -37,6 +42,9 @@ class ViewController: UIViewController, BarcodeScannerCodeDelegate, BarcodeScann
     
     func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
         print(code)
+        
+        upcCodes.append(code)
+        self.tableView.reloadData()
         controller.dismiss(animated: true, completion: nil)
         controller.reset()
     }
@@ -51,5 +59,28 @@ class ViewController: UIViewController, BarcodeScannerCodeDelegate, BarcodeScann
     }
     
 
+}
+
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return upcCodes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell")
+        
+        let upcCode = upcCodes[indexPath.row]
+        cell?.textLabel?.text = upcCode
+        
+        return cell!
+    }
+    
+    
 }
 

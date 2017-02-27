@@ -23,20 +23,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9R-19-Vpm">
-                                <rect key="frame" x="170" y="318.5" width="35" height="30"/>
+                                <rect key="frame" x="170" y="28" width="35" height="30"/>
                                 <state key="normal" title="Scan"/>
                                 <connections>
                                     <action selector="scan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zld-k7-CKH"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zj2-46-4Oa">
+                                <rect key="frame" x="0.0" y="66" width="375" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="cRa-aS-NYW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRa-aS-NYW" id="m8x-MW-WQp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yA2-TO-xRx"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="h3G-so-KD5"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="F9R-19-Vpm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5J6-ev-Mm0"/>
-                            <constraint firstItem="F9R-19-Vpm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="77U-4F-RrT"/>
+                            <constraint firstItem="F9R-19-Vpm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3qp-94-YIO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zj2-46-4Oa" secondAttribute="bottom" id="HAE-Z1-AVo"/>
+                            <constraint firstItem="Zj2-46-4Oa" firstAttribute="top" secondItem="F9R-19-Vpm" secondAttribute="bottom" constant="8" id="T3s-zy-fTS"/>
+                            <constraint firstAttribute="trailing" secondItem="Zj2-46-4Oa" secondAttribute="trailing" id="bC5-yy-j6M"/>
+                            <constraint firstItem="Zj2-46-4Oa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hEh-2L-gdk"/>
+                            <constraint firstItem="F9R-19-Vpm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xnj-S8-DuG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="MKs-pb-u1T"/>
+                    <connections>
+                        <outlet property="tableView" destination="Zj2-46-4Oa" id="0uM-1q-Cyk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
